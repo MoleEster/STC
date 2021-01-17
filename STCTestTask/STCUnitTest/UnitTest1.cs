@@ -16,6 +16,7 @@ namespace STCUnitTest
             string answer = "TikvMxHTfuw";
             Assert.AreEqual(answer, STCTestTask.Program.Encrypt("ThisIsA&%#^-Test", "abcdefh"));
         }
+
         [TestMethod]
         public void TestEnumerableEncryption()
         {
@@ -27,12 +28,14 @@ namespace STCUnitTest
             }
             Assert.AreEqual(answer, "TikvMxHTfuw");
         }
+
         [TestMethod]
         public void TestDencryption()
         {
             string answer = "ThisIsATest";
             Assert.AreEqual(answer, STCTestTask.Program.Dencrypt("TikvMxHTfuw", "abcdefh"));
         }
+
         [TestMethod]
         public void TestEnumerableDencryption()
         {
@@ -61,6 +64,7 @@ namespace STCUnitTest
             };
 
         }
+
         [TestMethod]
         public void TestSubscriber()
         {
@@ -75,7 +79,7 @@ namespace STCUnitTest
             Assert.AreEqual(2, subscriber2.ID);
             subscriber.Subscribe(subscriber2);
             Assert.AreEqual(1, subscriber.amountOfSubscribers);
-
+            subscriber.Unsubscribe(subscriber2);
         }
 
     }

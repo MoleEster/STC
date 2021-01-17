@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace STCTestTaskTwo.Классы
 {
     public sealed class Subscriber : ISubscriber
     {
+        private List<int> subscribers = new List<int>();
         private static int i = 0;
 
         private int index;
@@ -12,9 +14,7 @@ namespace STCTestTaskTwo.Классы
 
         public string Username { get; set; }
 
-        public int amountOfSubscribers { get => _amountOfSubscribers ; }
-
-        private int _amountOfSubscribers = 0;
+        public int amountOfSubscribers { get => subscribers.Count ; }
 
         public Subscriber()
         {
@@ -24,10 +24,19 @@ namespace STCTestTaskTwo.Классы
 
         public void Subscribe(ISubscriber subscriber)
         {
-            if (this.Username != subscriber.Username)
+            if (this.Username != subscriber.Username && !subscribers.Contains(subscriber.ID))
             {
-                _amountOfSubscribers++;
                 Console.WriteLine("{0} subscribed on {1} at {2}", subscriber.Username, this.Username, DateTime.Now);
+                subscribers.Add(subscriber.ID);
+            }
+        }
+
+        public void Unsubscribe(ISubscriber subscriber)
+        {
+            if (this.Username != subscriber.Username && subscribers.Contains(subscriber.ID))
+            {
+                Console.WriteLine("{0} unsubscribed {1} at {2}", subscriber.Username, this.Username, DateTime.Now);
+                subscribers.Remove(subscriber.ID);
             }
         }
     }

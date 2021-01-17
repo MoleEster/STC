@@ -27,6 +27,8 @@ namespace STCTestTaskTwo
             };
             subscriber.Subscribe(subscriber2);
             Console.ReadLine();
+            subscriber.Unsubscribe(subscriber2);
+            Console.ReadLine();
         }
 
         public static void Post(IMessage message) 

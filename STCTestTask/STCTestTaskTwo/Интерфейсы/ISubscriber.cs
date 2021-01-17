@@ -6,5 +6,6 @@
         int amountOfSubscribers { get; }
         string Username { get; set; }
         void Subscribe(ISubscriber subscriber);
+        void Unsubscribe(ISubscriber subscriber);
     }
 }
