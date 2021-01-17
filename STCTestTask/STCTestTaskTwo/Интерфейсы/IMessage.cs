@@ -2,7 +2,7 @@
 
 namespace STCTestTaskTwo
 {
-    interface IMessage
+    public interface IMessage
     {
         string Sender { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿namespace STCTestTaskTwo
 {
-    interface ISubscriber
+    public interface ISubscriber
     {
         int ID { get; }
         int amountOfSubscribers { get; }

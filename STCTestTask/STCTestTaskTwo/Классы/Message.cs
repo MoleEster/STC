@@ -2,7 +2,7 @@
 
 namespace STCTestTaskTwo
 {
-    internal sealed class Message : IMessage
+    public sealed class Message : IMessage
     {
         public string Sender { get; set; }
 

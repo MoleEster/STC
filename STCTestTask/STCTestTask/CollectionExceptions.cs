@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace STCTestTask
 {
-    internal sealed class CollectionExceptions
+    public sealed class CollectionExceptions
     {
 
         public static IEnumerable<string> Encrypt(IEnumerable<string> source, string key)

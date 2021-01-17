@@ -3,7 +3,7 @@ using STCTestTaskTwo.Классы;
 
 namespace STCTestTaskTwo
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

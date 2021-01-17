@@ -2,7 +2,7 @@
 
 namespace STCTestTaskTwo.Классы
 {
-    internal sealed class Subscriber : ISubscriber
+    public sealed class Subscriber : ISubscriber
     {
         private static int i = 0;
 
@@ -24,8 +24,11 @@ namespace STCTestTaskTwo.Классы
 
         public void Subscribe(ISubscriber subscriber)
         {
-            _amountOfSubscribers++;
-            Console.WriteLine("{0} subscribed on {1} at {2}", subscriber.Username,this.Username, DateTime.Now);
+            if (this.Username != subscriber.Username)
+            {
+                _amountOfSubscribers++;
+                Console.WriteLine("{0} subscribed on {1} at {2}", subscriber.Username, this.Username, DateTime.Now);
+            }
         }
     }
 }
